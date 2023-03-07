@@ -1,0 +1,21 @@
+.mypicture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+h1 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
