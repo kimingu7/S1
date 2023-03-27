@@ -1,0 +1,13 @@
+.test{
+    font-family: 'Black Han Sans', sans-serif;
+}
+.txt{
+    border : 1px solid black;
+    border-radius: 10px;
+    font-family: 'Nanum Pen Script', cursive;
+    text-align: center;
+    font-size: 30px;
+    /* background-color: aqua; */
+    width: 500px;
+    height: 100px;
+}

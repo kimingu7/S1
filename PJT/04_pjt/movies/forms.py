@@ -1,0 +1,15 @@
+from django import forms
+from .models import Movie
+
+class MovieForm(forms.ModelForm):
+    class Meta:
+        model = Movie
+        fields = '__all__'
+        widgets = {
+            'score': forms.NumberInput(attrs={
+                'min': 0,
+                'max': 5,
+                'step': 0.5,
+            }),
+            'release_date' : forms.DateInput(attrs={'type':'date'}),
+        }

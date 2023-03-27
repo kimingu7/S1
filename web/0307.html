@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            h2 {
+                color: darkviolet
+                !important;
+            }
+            .input-group {
+                color: darkgoldenrod
+            }
+            p{
+                color: orange;
+            }
+            .blue{
+                color: blue;
+            }
+            .green{
+                color: green;
+            }
+            #red{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="color : green; font-size: 50px;">가나다라</h1>
+        <h2>20230307</h2>
+        <p>
+        <b style="color : blueviolet">피곤하다</b><br />
+        <i>자고싶다</i>
+        </p>
+        <a href="https://www.google.co.kr">네이버</a><br />
+        <a href="https://www.naver.co.kr">구글</a>
+        <hr>
+        <h1>집에 가고싶으면 체크</h1>
+        <form action="">
+            <div class="input-group">
+                <lable for="want">지금 하고 싶은거</lable><br />
+                <input type="text" name="want" id="want" autofoucs>
+            </div>
+            <div class="input-group">
+                <lable for="fixed">지금 할 수 있는거</lable><br />
+                <input type="text" name="fixed" value="수업 듣기" id="fixed" disabled>
+            </div>
+            <div class="input-group">
+                <label for="agreement">집에 가고싶으면 체크</label><br />
+                <input type="checkbox" name="agreement" id="agreement">
+            </div>
+        </form>
+        <hr>
+        <p>1</p>
+        <p class="blue">2</p>
+        <p class="blue green">3</p>
+        <p class="green blue">4</p>
+        <p id="red" class="blue">5</p>
+        <h2 id="red" class="blue">6</h2>
+        <p id="red" class="blue" style="color : darkorange;">7</p>
+        <h2 id="red" class="blue" style="color: darkorange;">8</h2>
+        <hr>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #hphk > p:nth-of-type(2){
+      color: blue;
+    }
+    #hphk > p:nth-child(2){
+	    color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="hphk">
+    <h2>어떻게 선택 될까?</h2>
+    <p>첫번째 단락</p>
+    <p>두번째 단락</p>
+    <p>세번째 단락</p>
+    <p>네번째 단락</p>
+  </div>
+</body>
+</html>
+<!-- nth-child와 nth-of-type의 차이는 type 조건의 만족 여부
+p:nth-child(2)는 2번째 자식 요소
+p:nth-of-type(2)는 자식 요소 중 <p> 타입인 2번째 자식 요소-->
