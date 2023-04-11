@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>DETAIL</h1>
+<hr>
+<h2>{{question.title}}</h2>
+<a href="{% url 'eithers:update' question.pk%}">UPDATE</a>
+<br>
+<form action="{% url 'eithers:delete' question.pk %}" method="POST">
+	{% csrf_token %}
+	<input type="submit" value="DELETE">
+</form>
+<h4>Red Team</h4>
+<h4>=> {{question.issue_a}}</h4>
+<br>
+<h4>Blue Team</h4>
+<h4>=> {{question.issue_b}}</h4>
+<hr>
+<a href="{% url 'eithers:index' %}">BACK</a>
+<hr>
+<form action="{% url 'eithers:comment' question.pk %}" method="post">
+	{% csrf_token %}
+	{{ comment_form }}
+	<br>
+	<input type="submit" value="작성">
+</form>
+<hr>
+<h4>댓글 목록</h4>
+{% for comment in comments %}
+<ul>{{ comment.pick }} - {{ comment.content }}</ul>
+<form action="{% url 'eithers:comment_delete' question.pk comment.pk %}" method="POST">
+	{% csrf_token %}
+	<input type="submit" value="del">
+</form>
+{% endfor %}
+
+{% endblock content %}

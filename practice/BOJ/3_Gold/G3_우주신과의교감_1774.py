@@ -41,5 +41,5 @@ print(f'{answer:.2f}')
 # kruskal 알고리즘을 활용해 길이의 합을 최소로 만들도록 함
 # 신들의 위치인 gods 배열에 위치를 저장
 # 이미 주어진 m개의 배열들을 먼저 union-find를 통해 연결
-# edges 배열에 i, j와 i, j 사이의 거리 edge를 저장
-# 거리 기준으로 정하고 kruskal 알고리즘을 통해 최소 스패닝 트리를 구함
+# edges 배열에 1번 신부터 n번 신까지 신 i, j와 두 신 i, j 사이의 거리 edge를 저장
+# kruskal 알고리즘을 통해 최소 스패닝 트리를 구함
