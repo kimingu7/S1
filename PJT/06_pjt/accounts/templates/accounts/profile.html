@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ user.username }}님의 프로필</h1>
+    <div>
+        <div>팔로잉 : {{ user.followings.count }} | 팔로워 : {{ user.followers.count }}</div>    
+        {% if request.user != user %}
+            <form action="{% url 'accounts:follow' user.pk %}" method="POST">
+                {% csrf_token %}
+                {% if request.user in user.followers.all %}
+                    <button type="submit" class="btn btn-danger">언팔로우</button>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">팔로우</button>
+                {% endif %}
+            </form>
+        {% endif %}    
+
+    </div>
+    <hr>
+
+    <h5>{{ user.username }}님의 작성글</h5>
+    <hr>
+    {% for board in user.board_set.all %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ board.title }}</h5>
+                <p class="card-text">{{ board.content }}</p>
+                <a href="{% url 'boards:detail' board.pk %}" class="btn btn-primary">자세히 보기</a>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+    <br><br>
+
+    <h5>{{ user.username }}님이 좋아요한 게시물</h5>
+    <hr>
+    {% for board in user.like_boards.all %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ board.title }}</h5>
+                <p class="card-text">{{ board.content }}</p>
+                <a href="{% url 'boards:detail' board.pk %}" class="btn btn-primary">자세히 보기</a>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+
+    <br><br>    
+
+    <h5>{{ user.username }}님을 팔로우하는 유저</h5>
+    <hr>
+    {% for user in user.followers.all %}
+        <a href="{% url 'accounts:profile' user.username%}">{{ user.username }}</a>
+    {% endfor %}
+
+    <br><br>  
+
+    <h5>{{ user.username }}님이 팔로잉하는 유저</h5>
+    <hr>
+    {% for user in user.followings.all %}
+    <a href="{% url 'accounts:profile' user.username%}">{{ user.username }}</a>
+    {% endfor %}
+
+    <br><br> 
+    <a href="{% url 'boards:index' %}" class="btn btn-success">목록보기</a>
+
+{% endblock content %}
