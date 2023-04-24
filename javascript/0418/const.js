@@ -1,0 +1,25 @@
+/* const
+1. 생략 불가능
+	console.log(a) // 에러 발생
+	const a = 1
+2. 변수 호이스팅이 동작하지 않는 것처럼
+3. 재선언, 재할당 불가능
+	const a = 1
+	const a = 2 // X 
+	a = 2 // X
+	console.log(a)
+4. 블록레벨스코프
+	const a = 1
+	if (a === 1){
+		const a = 2
+		console.log(a) // 2
+	}
+	console.log(a) // 1
+
+	function test(){
+		const a = 3
+		console.log(a)
+	}
+	test() // 3
+	console.log(a) // 1		
+*/
