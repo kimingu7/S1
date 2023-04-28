@@ -14,26 +14,27 @@
 
     // 1
     const name = 'Tom'
-    console.log('Hi, my name is' + name)
+    console.log(`Hi, my name is ${name}`)
 
     // 2
-    function add(x, y) {
-      return x + y
-    }
+    const add = (x,y) => x + y
 
     // 3
     const tom = {
       name: 'Tom',
-      introduce: function () {
-        console.log('Hi, my name is' + this.name)
+      introduce() {
+        console.log(`Hi, my name is ${this.name}.`)
       }
     }
 
-    // 4
-    const url = 'https://test.com'
-    const data = { message: 'Hello World!' }
+    tom.introduce()
 
-    const request = { url: url, data: data }
+
+    // 4
+    const request = {
+      url: 'https://test.com',
+      data: { message: 'Hello World!' }
+    }
   </script>
 </body>
 </html>
