@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-if="click0">
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+        </div>
+        <div v-else-if="click1">
+            <div>d</div>
+            <div>e</div>
+        </div>
+        <div v-else="click2">
+            <div>f</div>
+            <div>g</div>
+        </div>
+        <button v-on:click="test">
+            go
+        </button>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                click0 : true,
+                click1 : false,
+                click2 : false,
+            },
+            methods:{
+                test(){
+                    if (this.click0 === true){
+                        this.click0 = false
+                        this.click1 = true
+                        this.click2 = false
+                    }
+                    else if (this.click1 === true){
+                        this.click0 = false
+                        this.click1 = false
+                        this.click2 = true
+                    }
+                    else if (this.click2 === true){
+                        this.click0 = true
+                        this.click1 = false
+                        this.click2 = false
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
