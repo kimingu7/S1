@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta charset="utf8">
+    <title>Hello, world</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>회문 검사기</h1>
+      <input v-model="inputText" type="text">
+      <button type="submit" @click="checkPalindrome">확인하기</button>
+    </div>
+
+    <script type="text/javascript">
+      const app = new Vue({
+        el: '#app',
+        data: {
+          inputText: '',
+        },
+        methods: {
+          checkPalindrome() {
+            const input = this.inputText.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'');
+            if (!input) {
+              alert('입력값이 없습니다!');
+              return;
+            }
+            const reversed = input.split('').reverse().join('');
+            if (input === reversed) {
+              alert('회문입니다!');
+            } else {
+              alert('회문이 아닙니다!');
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
